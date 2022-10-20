@@ -73,9 +73,11 @@ body {
 app-root {
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 
   header {
+    width: 100%;
     .container {
       flex-grow: 0;
       display: flex;
@@ -97,6 +99,7 @@ app-root {
 
   main.container {
     flex-grow: 1;
+    width: 90%;
     display: flex;
     flex-direction: column;
   }
@@ -113,6 +116,7 @@ app-page-login {
     gap: 1rem;
     padding: 2rem 1rem;
     width: 90%;
+    max-width: 500px;
     background-color: #e6f0ff;
     border-radius: 8px;
   }
