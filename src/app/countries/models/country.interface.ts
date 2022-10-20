@@ -9,13 +9,13 @@ export interface Country {
   cca3: string;
   ccn3?: string;
   cioc?: string;
-  coatOfArms: CoatOfArms;
+  coatOfArms: ImageFormats;
   continents: Continent[];
   currencies?: Currencies;
   demonyms?: Demonyms;
   fifa?: string;
   flag: string;
-  flags: CoatOfArms;
+  flags: ImageFormats;
   gini?: { [key: string]: number };
   idd: Idd;
   independent?: boolean;
@@ -50,7 +50,7 @@ export enum Side {
   Right = 'right',
 }
 
-export interface CoatOfArms {
+export interface ImageFormats {
   png?: string;
   svg?: string;
 }

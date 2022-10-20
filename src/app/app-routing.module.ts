@@ -1,25 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageCountriesComponent } from './pages/page-countries/page-countries.component';
+import { IsLoggedInGuard } from './guards/is-logged-in.guard';
+import { PageLoginComponent } from './pages/page-login/page-login.component';
 
 const routes: Routes = [
   {
     path: 'countries',
-    component: PageCountriesComponent,
+    canLoad: [IsLoggedInGuard],
+    loadChildren: () =>
+      import('./countries/countries.module').then((m) => m.CountriesModule),
+    canActivate: [IsLoggedInGuard],
+  },
+  {
+    path: 'login',
+    component: PageLoginComponent,
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'countries',
+    redirectTo: 'login',
   },
-  {
-    path: '**',
-    redirectTo: 'countries',
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -30,5 +30,88 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* -*************************************************************************- */
 
 /* -*************************************************************************- */
+/* SHARED */
+.container {
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 950px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1100px;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #06f;
+  color: #fff;
+  font-size: 1.25rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* -*************************************************************************- */
+/* SPECIFIC */
+html,
+body {
+  min-height: 100vh;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  header {
+    .container {
+      flex-grow: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  main.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+app-page-login {
+  flex: 1;
+  display: grid;
+  place-items: center;
+
+  .login-container {
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    width: 90%;
+  }
+}
