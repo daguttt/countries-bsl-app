@@ -1,4 +1,8 @@
 <h2>Countries</h2>
-<ul *ngIf="countries$ | async as countries">
-  <li *ngFor="let country of countries">{{ country.name.common }}</li>
+<ul *ngIf="countries$ | async as countries" class="card-images">
+  <li *ngFor="let country of countries" class="card-image">
+    <img [src]="country.flags.svg" alt="Country Flag" />
+    <span class="card-image__text">{{ country.name.common }}</span>
+    <div class="card-image__bottom-shadow"></div>
+  </li>
 </ul>
