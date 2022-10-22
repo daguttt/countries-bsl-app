@@ -1,7 +1,7 @@
 <header class="header">
   <div class="container">
     <h1>Countries App - BeeSoft Labs</h1>
-    <button *ngIf="isLoggedIn" (click)="logOut()" class="button">
+    <button *ngIf="isLoggedIn$ | async" (click)="logOut()" class="button">
       Log out
     </button>
   </div>

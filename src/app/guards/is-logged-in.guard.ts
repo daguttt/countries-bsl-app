@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanLoad, Router, UrlTree } from '@angular/router';
-import { isLoggedIn } from '../shared/utils/is-logged-in';
+import { CanLoad, Router, UrlTree } from '@angular/router';
+import { map, Observable } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class IsLoggedInGuard implements CanActivate, CanLoad {
-  constructor(private router: Router) {}
+export class IsLoggedInGuard implements CanLoad {
+  constructor(private router: Router, private authService: AuthService) {}
 
-  canLoad(): boolean | UrlTree {
+  canLoad(): Observable<boolean | UrlTree> {
     return this.isLoggedIn();
   }
 
-  canActivate(): boolean | UrlTree {
-    return this.isLoggedIn();
-  }
-
-  private isLoggedIn(): boolean | UrlTree {
-    return isLoggedIn() || this.router.createUrlTree(['/login']);
+  private isLoggedIn(): Observable<boolean | UrlTree> {
+    return this.authService.isLoggedIn$.pipe(
+      map((isLoggedIn) => isLoggedIn || this.router.createUrlTree(['/login']))
+    );
   }
 }

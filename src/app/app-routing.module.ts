@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IsLoggedInGuard } from './guards/is-logged-in.guard';
+import { IsNotLoggedInGuard } from './guards/is-not-logged-in.guard';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 
 const routes: Routes = [
@@ -9,16 +10,16 @@ const routes: Routes = [
     canLoad: [IsLoggedInGuard],
     loadChildren: () =>
       import('./countries/countries.module').then((m) => m.CountriesModule),
-    canActivate: [IsLoggedInGuard],
   },
   {
     path: 'login',
+    canActivate: [IsNotLoggedInGuard],
     component: PageLoginComponent,
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login',
+    redirectTo: 'countries',
   },
 ];
 
