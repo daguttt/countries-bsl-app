@@ -58,9 +58,14 @@ img {
   border-radius: 0.25rem;
   background-color: #06f;
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
   text-align: center;
+
+  &-sm {
+    font-size: 0.8rem;
+  }
 }
 
 /* -*************************************************************************- */
@@ -133,7 +138,15 @@ app-page-countries {
     margin-bottom: 2rem;
   }
 
-  .card-images {
+  .button-group {
+    max-width: 500px;
+  }
+}
+
+app-country-list {
+  display: block;
+
+  .card-images-container {
     padding: 0;
     margin: 0;
     display: grid;
@@ -175,5 +188,15 @@ app-page-countries {
         box-shadow: 0 0 40px 15px #000;
       }
     }
+  }
+}
+
+app-new-country {
+  display: block;
+
+  div {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    max-width: 500px;
   }
 }
