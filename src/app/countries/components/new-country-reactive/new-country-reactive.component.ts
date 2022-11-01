@@ -29,7 +29,7 @@ export class NewCountryReactiveComponent {
         common: newCountry.name ?? '',
         official: newCountry.name ?? '',
       },
-      capital: [newCountry.capital ?? ''],
+      capital: [`${newCountry.capital ?? ''} City`],
       flags: {
         svg: 'https://flagcdn.com/co.svg',
       },

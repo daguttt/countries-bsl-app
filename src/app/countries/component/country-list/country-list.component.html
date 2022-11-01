@@ -8,7 +8,9 @@
       loading="lazy"
       fetchpriority="auto"
     />
-    <span class="card-image__text">{{ country.name.common }}</span>
+    <span class="card-image__text"
+      >{{ country.name.common }}, <i>{{ country?.capital?.[0] }}</i></span
+    >
     <div class="card-image__bottom-shadow"></div>
   </li>
 </ul>
