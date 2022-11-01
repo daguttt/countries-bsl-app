@@ -62,10 +62,69 @@ img {
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   text-align: center;
+  transition: 500ms background-color ease;
 
   &-sm {
     font-size: 0.8rem;
   }
+
+  .button-group & {
+    flex: 1;
+    border-radius: initial;
+    background-color: #e6f0ff;
+    color: #000;
+    border: 1px solid #06f;
+
+    &.active {
+      background-color: #06f;
+      color: #fff;
+    }
+
+    &:first-of-type {
+      border-bottom-left-radius: 0.25rem;
+      border-top-left-radius: 0.25rem;
+    }
+
+    &:last-of-type {
+      border-bottom-right-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+  }
+}
+
+.button-group {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #96c0ff;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+
+  &.ng-invalid.ng-touched {
+    border-color: red;
+  }
+
+  &:focus {
+    border: 0.5px solid #06f3;
+  }
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.input-error {
+  color: red;
 }
 
 /* -*************************************************************************- */

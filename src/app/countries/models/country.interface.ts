@@ -36,6 +36,12 @@ export interface Country {
   unMember: boolean;
 }
 
+export interface CountryLike {
+  name: Name;
+  capital?: string[];
+  flags: ImageFormats;
+}
+
 export interface CapitalInfo {
   latlng?: number[];
 }

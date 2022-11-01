@@ -1,15 +1,12 @@
 <h2>Countries</h2>
-<ul *ngIf="countries$ | async as countries" class="card-images">
-  <li *ngFor="let country of countries" class="card-image">
-    <img
-      [ngSrc]="country.flags.svg!"
-      [width]="200"
-      [height]="150"
-      alt="Country Flag"
-      loading="lazy"
-      fetchpriority="auto"
-    />
-    <span class="card-image__text">{{ country.name.common }}</span>
-    <div class="card-image__bottom-shadow"></div>
-  </li>
-</ul>
+
+<div class="button-group">
+  <button class="button" routerLink="./list" routerLinkActive="active">
+    Listado
+  </button>
+  <button class="button" routerLink="./create" routerLinkActive="active">
+    Añadir País
+  </button>
+</div>
+
+<router-outlet></router-outlet>
