@@ -62,10 +62,74 @@ img {
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
   text-align: center;
+  transition: 500ms background-color ease;
 
   &-sm {
     font-size: 0.8rem;
   }
+
+  .button-group & {
+    flex: 1;
+    border-radius: initial;
+    background-color: #e6f0ff;
+    color: #000;
+    border: 1px solid #06f;
+    font-size: 0.9rem;
+
+    @media (min-width: 576px) {
+      font-size: 1rem;
+    }
+
+    &.active {
+      background-color: #06f;
+      color: #fff;
+    }
+
+    &:first-of-type {
+      border-bottom-left-radius: 0.25rem;
+      border-top-left-radius: 0.25rem;
+    }
+
+    &:last-of-type {
+      border-bottom-right-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+  }
+}
+
+.button-group {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #96c0ff;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+
+  &.ng-invalid.ng-touched {
+    border-color: red;
+  }
+
+  &:focus {
+    border: 0.5px solid #06f3;
+  }
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.input-error {
+  color: red;
 }
 
 /* -*************************************************************************- */
@@ -150,14 +214,14 @@ app-country-list {
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
     gap: 2rem;
     place-content: center;
 
     .card-image {
       position: relative;
-      max-width: 200px;
-      height: 150px;
+      max-width: 300px;
+      height: 200px;
       border-radius: 8px;
       overflow: hidden;
       color: #fff;
@@ -185,13 +249,14 @@ app-country-list {
         bottom: 0;
         z-index: 1;
         width: 100%;
-        box-shadow: 0 0 40px 15px #000;
+        box-shadow: 0 0 50px 15px #000;
       }
     }
   }
 }
 
-app-new-country {
+app-new-country-reactive,
+app-new-country-template-driven {
   display: block;
 
   div {

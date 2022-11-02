@@ -1,0 +1,16 @@
+<ul *ngIf="countries" class="card-images-container">
+  <li *ngFor="let country of countries" class="card-image">
+    <img
+      [ngSrc]="country.flags.svg!"
+      [width]="200"
+      [height]="150"
+      alt="Country Flag"
+      loading="lazy"
+      fetchpriority="auto"
+    />
+    <span class="card-image__text"
+      >{{ country.name.common }}, <i>{{ country?.capital?.[0] }}</i></span
+    >
+    <div class="card-image__bottom-shadow"></div>
+  </li>
+</ul>
