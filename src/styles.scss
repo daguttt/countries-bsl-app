@@ -74,6 +74,11 @@ img {
     background-color: #e6f0ff;
     color: #000;
     border: 1px solid #06f;
+    font-size: 0.9rem;
+
+    @media (min-width: 576px) {
+      font-size: 1rem;
+    }
 
     &.active {
       background-color: #06f;
@@ -250,7 +255,8 @@ app-country-list {
   }
 }
 
-app-new-country {
+app-new-country-reactive,
+app-new-country-template-driven {
   display: block;
 
   div {

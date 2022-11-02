@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CountriesService } from '../../services/countries.service';
+import { CountriesService } from '../../../services/countries.service';
 
 @Component({
-  selector: 'app-new-country',
+  selector: 'app-new-country-reactive',
   templateUrl: './new-country-reactive.component.html',
   styles: [],
 })
