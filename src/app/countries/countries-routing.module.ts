@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CountryListComponent } from './component/country-list/country-list.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
 import { NewCountryReactiveComponent } from './components/new-country-reactive/new-country-reactive.component';
 import { PageCountriesComponent } from './pages/page-countries/page-countries.component';
 
