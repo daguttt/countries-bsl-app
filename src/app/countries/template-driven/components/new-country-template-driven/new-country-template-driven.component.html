@@ -2,7 +2,14 @@
   <!-- Name -->
   <div>
     <label for="name">Nombre del País</label>
-    <input type="text" id="name" name="name" ngModel required #name="ngModel" />
+    <input
+      type="text"
+      id="name"
+      name="name"
+      [ngModel]="initialNewCountry.name"
+      required
+      #name="ngModel"
+    />
     <small *ngIf="name.invalid && name.touched" class="input-error">
       El nombre es requerido
     </small>
@@ -10,7 +17,12 @@
   <!-- Capital -->
   <div>
     <label for="capital">Capital</label>
-    <input type="text" id="capital" name="capital" ngModel />
+    <input
+      type="text"
+      id="capital"
+      name="capital"
+      [ngModel]="initialNewCountry.capital"
+    />
   </div>
   <button type="submit" class="button button-sm">Añadir</button>
 </form>
